@@ -1,0 +1,10 @@
+.status_modal{
+    background-color: rgba(34, 34, 121, 0.406) !important;
+
+}
+.card{
+    /* background-color: rgb(34, 34, 121) !important; */
+    /* color: aliceblue !important; */ 
+    border:2px solid #4267b2 !important ;
+    box-shadow: 3px 3px 3px 3px rgb(139, 138, 138) !important;
+}

@@ -1,0 +1,12 @@
+.card_header{
+    border-bottom: 2px solid #2d4880 !important;
+    
+}
+.dropdown-icons{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #4267b2 !important;
+}
+.card_footer{
+    border-bottom: 2px solid #4267b2 !important;
+}
