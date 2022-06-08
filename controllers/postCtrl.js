@@ -249,6 +249,15 @@ const postCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    getAllPost: async(req,res)=>{
+        try{
+            const post=await Posts.find({})
+            if(!post) return res.status(400).json({msg:'user does not exist.'});
+            res.json([post]);
+        }catch(err){
+            res.status(500).json({msg:err.message})
+        }
+    }
 }
 
 module.exports = postCtrl

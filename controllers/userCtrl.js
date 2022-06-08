@@ -95,6 +95,15 @@ const userCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+    getAlluser: async(req,res)=>{
+        try{
+            const users=await Users.find({})
+            if(!users) return res.status(400).json({msg:'user does not exist.'});
+            res.json([users]);
+        }catch(err){
+            res.status(500).json({msg:err.message})
+        }
+    }
 }
 
 

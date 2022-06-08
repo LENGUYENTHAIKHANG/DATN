@@ -14,8 +14,10 @@ const UserCard = ({children, user, border, handleClose, setShowFollowers, setSho
     }
 
     const showMsg = (user) => {
+        
         return(
             <>
+            {console.log(user)}
                 <div style={{filter: theme ? 'invert(1)' : 'invert(0)'}}>
                     {user.text}
                 </div>

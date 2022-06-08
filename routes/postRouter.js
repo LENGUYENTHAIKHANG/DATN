@@ -25,5 +25,7 @@ router.patch('/unSavePost/:id', auth, postCtrl.unSavePost)
 
 router.get('/getSavePosts', auth, postCtrl.getSavePosts)
 
+router.get('/getallpost',  postCtrl.getAllPost)
+
 
 module.exports = router

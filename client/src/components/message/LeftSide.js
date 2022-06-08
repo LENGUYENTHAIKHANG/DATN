@@ -109,7 +109,7 @@ const LeftSide = () => {
                         
                     </>
                     : <>
-                    {console.log(message.users)}
+                    {console.log(message)}
                         {
                             
                             message.users.map(user => (

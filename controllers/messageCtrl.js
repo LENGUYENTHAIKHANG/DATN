@@ -19,8 +19,9 @@ class APIfeatures {
 const messageCtrl = {
     createMessage: async (req, res) => {
         try {
-            const { sender, recipient, text, media, call } = req.body
-
+            const { sender ,recipient, text, media, call } = req.body
+      
+            
             if(!recipient || (!text.trim() && media.length === 0 && !call)) return;
 
             const newConversation = await Conversations.findOneAndUpdate({
@@ -35,8 +36,11 @@ const messageCtrl = {
 
             const newMessage = new Messages({
                 conversation: newConversation._id,
-                sender, call,
-                recipient, text, media
+                sender,
+                 call,
+                recipient,
+                 text,
+                  media
             })
 
             await newMessage.save()
@@ -47,6 +51,40 @@ const messageCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
+    createGroupMessage: async (req, res) => {
+        try {
+            const { sender, recipient, text, media, call } = req.body
+            
+            if(!recipient || (!text.trim() && media.length === 0 && !call)) return;
+        
+            const groupchat = new Conversations(
+                { 
+                    text
+                }
+                )
+             await groupchat.save()
+                await Conversations.updateMany(
+                    {
+                        _id:groupchat._id
+                    },{
+                       $push:{ recipients:recipient,}
+                    }
+                )
+               
+                
+            
+      
+ 
+            
+
+            res.json({msg: 'Create Success!'})
+
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+
     getConversations: async (req, res) => {
         try {
             const features = new APIfeatures(Conversations.find({

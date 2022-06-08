@@ -17,10 +17,11 @@ const PostThumb = ({posts, result}) => {
                             {
                                 post.images[0]
                                 // post.images[0].url.match(/video/i)
-                                ?<video controls src={post.images[0].url} alt={post.images[0].url}
+                                ?<img src={post.images[0].url} alt={post.images[0].url}
                                 style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
+                                
 
-                                :<img src={post.images[0].url} alt={post.images[0].url}
+                                :<video controls src={post.images[0].url} alt={post.images[0].url}
                                 style={{filter: theme ? 'invert(1)' : 'invert(0)'}} />
                             }
 
