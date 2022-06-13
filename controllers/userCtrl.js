@@ -97,7 +97,7 @@ const userCtrl = {
     },
     getAlluser: async(req,res)=>{
         try{
-            const users=await Users.find({})
+            const users=await Users.find()
             if(!users) return res.status(400).json({msg:'user does not exist.'});
             res.json([users]);
         }catch(err){

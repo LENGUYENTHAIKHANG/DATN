@@ -27,7 +27,7 @@ const Menu = () => {
             <ul className="navbar-nav flex-row">
                 {
                     navLinks.map((link, index) => (
-                        <li className={`nav-item px-2 ${isActive(link.path)}`} key={index}>
+                        <li className={`nav-item nav-item-left px-2 ${isActive(link.path)}`} key={index}>
                             <Link className="nav-link" to={link.path}>
                                 <span className="material-icons">{link.icon}</span>
                             </Link>

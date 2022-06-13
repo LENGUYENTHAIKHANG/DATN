@@ -25,6 +25,8 @@ import { getNotifies } from './redux/actions/notifyAction'
 import CallModal from './components/message/CallModal'
 import Peer from 'peerjs'
 import './style.css'
+import Admin from './components/admin/Admin'
+import Adminpage from './components/admin/Adminpage'
 
 function App() {
   const { auth, status, modal, call } = useSelector(state => state)
@@ -72,7 +74,9 @@ function App() {
   return (
     <Router>
       <div className='App'>
+      
       <Alert />
+      
 
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
@@ -84,6 +88,9 @@ function App() {
           
           <Route exact path="/" component={auth.token ? Home : Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/adminpage" component={Adminpage} />
+          
 
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
@@ -91,7 +98,8 @@ function App() {
         </div>
       </div>
       </div>
-    </Router>
+      </Router>
+    
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import './style.css'
 
 const Icons = ({setContent, content, theme}) => {
     const reactions = [   
@@ -8,7 +9,7 @@ const Icons = ({setContent, content, theme}) => {
     ]
 
     return (
-        <div className="nav-item dropdown" 
+        <div className="nav-item nav-item-icons  dropdown" 
         style={{ opacity: 1, filter: theme ? 'invert(1)' : 'invert(0)' }}>
             
             <span className="nav-link position-relative px-1" id="navbarDropdown" 
@@ -16,7 +17,7 @@ const Icons = ({setContent, content, theme}) => {
                 <span style={{opacity: 0.4}}>😄</span>
             </span>
 
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div className="dropdown-menu " aria-labelledby="navbarDropdown">
                 <div className="reactions">
                     {
                         reactions.map(icon => (

@@ -1,0 +1,64 @@
+.admin-login{
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    height: 200px;
+    margin-top: 10%;
+    padding: 10px;
+}
+.admin-input{
+    margin-left: 30px;
+    width: 80%;
+}
+.admin-button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.admin{
+    display: flex;
+}
+.left-admin{
+    width: 50%;
+    
+}
+.admin-user-card{
+    width: 80%;
+    padding: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    margin-top: 10px;
+    text-align: center;
+   
+}
+.admin-user-info{
+   
+  
+}
+.admin-followed{
+    margin-left: 30px;
+}
+.admin-user-avt{
+    width: 100px;
+  
+  border-radius: 50px;
+}
+.admin-header{
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(169, 169, 255);
+    text-align: center;
+}
+.admin-delete-user{
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: red;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}

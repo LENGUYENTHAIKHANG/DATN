@@ -20,8 +20,8 @@ const Header = () => {
 
                 <Search />
 
-                <Menu />
-            </nav>
+                
+            </nav><Menu />
         </div>
     )
 }

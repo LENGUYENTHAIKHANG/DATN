@@ -3,9 +3,28 @@
     border-bottom: 1px solid #fff;
     
 }
+.nav-item{
+    width: 25%;
+    text-align: center;
+    transition-duration: 0.2s;
+    
+
+}
+.nav-item:hover {
+    background-color: rgb(127, 190, 245);
+    text-align: center;
+}
 .navbar-brand{
     color: aliceblue !important;
 }
 .material-icons{
-    color: aliceblue !important;
+    color: rgb(4, 4, 237) !important;
+ 
+}
+.dropdown-menu{
+    width: 300px;
+}
+.nav-item-left{
+    background-color: #c2c3c4;
+
 }

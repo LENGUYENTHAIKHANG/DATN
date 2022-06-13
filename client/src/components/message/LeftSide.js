@@ -28,7 +28,7 @@ const LeftSide = () => {
         try {
             const res = await getDataAPI(`search?username=${search}`, auth.token)
             setSearchUsers(res.data.users)
-            // console.log(res.data.users)
+           
             // tìm user
         } catch (err) {
             dispatch({

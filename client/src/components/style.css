@@ -8,3 +8,6 @@
     border:2px solid #4267b2 !important ;
     box-shadow: 3px 3px 3px 3px rgb(139, 138, 138) !important;
 }
+.nav-item-icons{
+    width: 50px !important;
+} 
