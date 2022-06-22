@@ -7,6 +7,7 @@ import Rightadmin from './Rightadmin'
 
 
 function Adminpage() {
+    
     const [user,setuser]=useState([])
     useEffect(() => {
         axios.get(`http://localhost:3000/api/alluser`)
@@ -16,17 +17,18 @@ function Adminpage() {
         
         })
         .catch(error => console.log(error));
-    }, [])
+    }, []);
+    const [userid,setUserid]=useState('628491313d86200adc4186ec')
     
     
   return (
     <>
     <div className='admin-header'>ADMIN</div>
     <div className='admin'>
-        
+        {console.log(userid)}
         <div className='left-admin'>
         {user.map(u=>(
-            <div className='admin-user-card'> 
+            <div className='admin-user-card'  onClick={()=>setUserid(u._id)}> 
             <div className='admin-user-info'>
                 <img className='admin-user-avt' src={u.avatar}/>
                
@@ -50,7 +52,7 @@ function Adminpage() {
             </div>
         ))}
         </div>
-        <Rightadmin/>
+        <Rightadmin id={userid}/>
     </div>
     </>
   )

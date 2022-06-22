@@ -62,3 +62,28 @@
     border-radius: 5px;
     height: 30px;
 }
+.adminpost{
+    border: 1px solid rgb(7, 7, 7);
+    width: 500px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+font-size: 20px;
+}
+.adminpost{
+    width: 600px ;
+   
+    
+}
+.admin-post-admin{
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 20px;
+}
+.admin-input{
+    width: 70%;
+}
+.delete-post-admin{
+margin-left: auto
+}

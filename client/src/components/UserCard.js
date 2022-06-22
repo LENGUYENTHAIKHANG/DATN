@@ -2,6 +2,7 @@ import React from 'react'
 import Avatar from './Avatar'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import './style.css'
 
 const UserCard = ({children, user, border, handleClose, setShowFollowers, setShowFollowing, msg}) => {
 
@@ -44,7 +45,7 @@ const UserCard = ({children, user, border, handleClose, setShowFollowers, setSho
 
 
     return (
-        <div className={`d-flex p-2 align-items-center justify-content-between w-100 ${border}`}>
+        <div className={`user-card d-flex p-2 align-items-center justify-content-between w-100 ${border}`}>
             <div>
                 <Link to={`/profile/${user._id}`} onClick={handleCloseAll}
                 className="d-flex align-items-center">
