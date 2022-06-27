@@ -3,6 +3,7 @@ const messageCtrl = require('../controllers/messageCtrl')
 const auth = require('../middleware/auth')
 
 router.post('/message', auth, messageCtrl.createMessage)
+router.post('/messageadmin',  messageCtrl.createMessage)
 
 router.post('/groupmessage',messageCtrl.createGroupMessage)
 

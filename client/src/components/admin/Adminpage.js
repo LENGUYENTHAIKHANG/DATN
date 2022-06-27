@@ -9,6 +9,7 @@ import Rightadmin from './Rightadmin'
 function Adminpage() {
     
     const [user,setuser]=useState([])
+    const [load,setload]=useState(1)
     useEffect(() => {
         axios.get(`http://localhost:3000/api/alluser`)
         .then(res => {
@@ -17,7 +18,7 @@ function Adminpage() {
         
         })
         .catch(error => console.log(error));
-    }, []);
+    }, [load]);
     const [userid,setUserid]=useState('628491313d86200adc4186ec')
     
     
@@ -46,7 +47,7 @@ function Adminpage() {
 
                 </div>
                 <div>
-                    <button className='admin-delete-user'>delete user</button>
+                    <button className='admin-delete-user' onClick={()=>{window.confirm("Press a button!");axios.delete(`http://localhost:3000/api/deleteuser/${u._id}`);setload(load+1)}}>delete user</button>
                 </div>
                
             </div>

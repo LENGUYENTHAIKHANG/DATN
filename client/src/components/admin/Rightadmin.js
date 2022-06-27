@@ -6,6 +6,20 @@ import './admin.css'
 
 function Rightadmin(props) {
   const [postid,setPostid]=useState([]);
+  const [textmgs,setTextmgs]=useState('')
+  const clickmess=()=>{
+    axios.post(`http://localhost:3000/api/messageadmin`, {
+      sender:"62b6c846dc755626b8baf0a1",
+      recipient:props.id,
+      text:textmgs
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
 
   useEffect(() => {
@@ -40,8 +54,8 @@ function Rightadmin(props) {
 
         ))}
         </div>
-       <input className='admin-input' type='text'  />
-       <button className='admin-button' >Send</button>
+       <input className='admin-input' type='text' onChange={(e)=>{setTextmgs(e.target.value);console.log(e.target.value)}}  />
+       <button className='admin-button' onClick={clickmess} >Send</button>
         </div>
     ))}
     </div>

@@ -103,7 +103,15 @@ const userCtrl = {
         }catch(err){
             res.status(500).json({msg:err.message})
         }
-    }
+    },
+    deleteUser: async (req, res) => {
+        try {
+            await Users.findOneAndDelete({_id: req.params.id })
+            res.json({msg: 'Delete Success!'})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
 }
 
 

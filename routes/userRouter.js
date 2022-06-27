@@ -14,7 +14,7 @@ router.patch('/user/:id/unfollow', auth, userCtrl.unfollow)
 
 router.get('/suggestionsUser', auth, userCtrl.suggestionsUser)
 router.get('/alluser', userCtrl.getAlluser)
-
+router.delete('/deleteuser/:id', userCtrl.deleteUser)
 
 
 module.exports = router

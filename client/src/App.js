@@ -27,6 +27,7 @@ import Peer from 'peerjs'
 import './style.css'
 import Admin from './components/admin/Admin'
 import Adminpage from './components/admin/Adminpage'
+import RightSideBar from './components/home/RightSideBar'
 
 function App() {
   const { auth, status, modal, call } = useSelector(state => state)
@@ -90,6 +91,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/adminpage" component={Adminpage} />
+          <Route exact path="/addfriend" component={RightSideBar} />
           
 
           <PrivateRouter exact path="/:page" component={PageRender} />
