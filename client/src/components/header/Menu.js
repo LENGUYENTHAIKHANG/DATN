@@ -9,10 +9,10 @@ import './style.css'
 
 const Menu = () => {
     const navLinks = [
-        { label: 'Home', icon: 'home', path: '/'},
-        { label: 'Message', icon: 'near_me', path: '/message'},
-        { label: 'Discover', icon: 'explore', path: '/discover'},
-        { label: 'RightSideBar', icon: 'group-add', path: '/addfriend'},
+        { label: 'Home', icon: 'widgets', path: '/'},
+        { label: 'Message', icon: 'forward_to_inbox', path: '/message'},
+        { label: 'public', icon: 'explore', path: '/discover'},
+        { label: 'RightSideBar', icon: 'group_add', path: '/addfriend'},
     ]
 
     const { auth, theme, notify } = useSelector(state => state)

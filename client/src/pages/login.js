@@ -68,9 +68,13 @@ const Login = () => {
                 <p className="my-2">
                     You don't have an account? <Link to="/register" style={{color: "crimson"}}>Register Now</Link>
                 </p>
-                <p className="my-2">
-                    admin <Link to="/admin" style={{color: "crimson"}}>admin</Link>
-                </p>
+                
+                     <Link to="/admin" style={{color: "crimson"}}>
+                        <span class="material-icons">
+admin_panel_settings
+</span>
+</Link>
+                
             </form>
         </div>
     )

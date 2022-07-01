@@ -203,6 +203,7 @@ const postCtrl = {
     },
     deletePostadmin: async (req, res) => {
         try {
+            
             const post = await Posts.findOneAndDelete({_id: req.params.id, })
             await Comments.deleteMany({_id: {$in: post.comments }})
 
@@ -223,6 +224,7 @@ const postCtrl = {
             const user = await Users.find({_id: req.user._id, saved: req.params.id})
             if(user.length > 0) return res.status(400).json({msg: "You saved this post."})
 
+
             const save = await Users.findOneAndUpdate({_id: req.user._id}, {
                 $push: {saved: req.params.id}
             }, {new: true})
@@ -240,6 +242,7 @@ const postCtrl = {
             const save = await Users.findOneAndUpdate({_id: req.user._id}, {
                 $pull: {saved: req.params.id}
             }, {new: true})
+
 
             if(!save) return res.status(400).json({msg: 'This user does not exist.'})
 
@@ -266,6 +269,7 @@ const postCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
     getAllPost: async(req,res)=>{
         try{
             const post=await Posts.find({})
@@ -276,5 +280,6 @@ const postCtrl = {
         }
     }
 }
+
 
 module.exports = postCtrl

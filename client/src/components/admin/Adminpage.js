@@ -11,7 +11,7 @@ function Adminpage() {
     const [user,setuser]=useState([])
     const [load,setload]=useState(1)
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/alluser`)
+        axios.get(`https://tknw.herokuapp.com/api/alluser`)
         .then(res => {
         
          setuser(res.data[0]);

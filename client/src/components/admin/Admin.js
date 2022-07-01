@@ -6,7 +6,7 @@ import "./admin.css"
 function Admin() {
     const dataadmin={
         email:'admin@gmail.com',
-        pass:'123456'
+        pass:'14012000'
     }
     const history = useHistory()
     const [email,setemail]=useState('')

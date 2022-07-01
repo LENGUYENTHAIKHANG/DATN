@@ -1,3 +1,49 @@
 .home-page{
     width: 100%;
 }
+.story-item{
+    border-radius: 60px !important;
+    width: 100px !important;
+    height: 100px !important;
+    background-color: rgb(209, 247, 247);
+    border: 2px solid rgb(243, 6, 227);
+    opacity: 0.5 !important; 
+    margin-left: 5px;
+    
+}
+.story-item:hover{
+    opacity: 1 !important; 
+}
+
+.story_display{
+    width: 100px !important;
+    height: 100px !important;
+    margin-right: 10px !important;
+
+}
+.story{
+    display: flex;
+    padding: 10px;
+    overflow: scroll;
+    overflow-y: hidden;
+  
+
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(252, 3, 223); 
+  }

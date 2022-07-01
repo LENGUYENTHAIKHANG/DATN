@@ -14,7 +14,7 @@ app.use(cors())
 app.use(cookieParser())
 
 
-// Socket
+
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
@@ -22,11 +22,11 @@ io.on('connection', socket => {
     SocketServer(socket)
 })
 
-// Create peer server
+
 ExpressPeerServer(http, { path: '/' })
 
 
-// Routes
+
 app.use('/api', require('./routes/authRouter'))
 app.use('/api', require('./routes/userRouter'))
 app.use('/api', require('./routes/postRouter'))

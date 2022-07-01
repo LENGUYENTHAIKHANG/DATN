@@ -12,12 +12,15 @@ const notifyCtrl = {
                 id, recipients, url, text, content, image, user: req.user._id
             })
 
+
             await notify.save()
             return res.json({notify})
         } catch (err) {
+            
             return res.status(500).json({msg: err.message})
         }
     },
+
     removeNotify: async (req, res) => {
         try {
             const notify = await Notifies.findOneAndDelete({
@@ -39,6 +42,7 @@ const notifyCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
     isReadNotify: async (req, res) => {
         try {
             const notifies = await Notifies.findOneAndUpdate({_id: req.params.id}, {
@@ -50,6 +54,7 @@ const notifyCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
     deleteAllNotifies: async (req, res) => {
         try {
             const notifies = await Notifies.deleteMany({recipients: req.user._id})

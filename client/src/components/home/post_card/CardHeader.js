@@ -7,7 +7,7 @@ import { GLOBALTYPES } from '../../../redux/actions/globalTypes'
 import { deletePost } from '../../../redux/actions/postAction'
 import { BASE_URL } from '../../../utils/config'
 import './style.css'
-import { CaretDownOutlined } from '@ant-design/icons'
+
 
 
 const CardHeader = ({post}) => {

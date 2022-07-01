@@ -7,6 +7,7 @@ import RightSideBar from '../components/home/RightSideBar'
 import { useSelector } from 'react-redux'
 import LoadIcon from '../images/loading.gif'
 import './style.css'
+import Story from './Story'
 
 
 let scroll = 0;
@@ -30,7 +31,9 @@ const Home = () => {
     return (
         <div className="home row mx-0">
             <div className="home-page" >
+            <Story/>
                 <Status />
+                
 
                 {
                     homePosts.loading 

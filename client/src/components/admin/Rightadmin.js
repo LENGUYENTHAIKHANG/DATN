@@ -23,7 +23,7 @@ function Rightadmin(props) {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api//user_post/${props.id}`)
+    axios.get(`https://tknw.herokuapp.com/api//user_post/${props.id}`)
         .then(res => {
         
           setPostid(res.data.posts);

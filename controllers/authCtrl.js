@@ -15,6 +15,7 @@ const authCtrl = {
             if(user_email) return res.status(400).json({msg: "This email already exists."})
 
             if(password.length < 6)
+            
             return res.status(400).json({msg: "Password must be at least 6 characters."})
 
             const passwordHash = await bcrypt.hash(password, 12)
@@ -30,10 +31,11 @@ const authCtrl = {
             res.cookie('refreshtoken', refresh_token, {
                 httpOnly: true,
                 path: '/api/refresh_token',
-                maxAge: 30*24*60*60*1000 // 30days
+                maxAge: 30*24*60*60*1000 
             })
 
             await newUser.save()
+
 
             res.json({
                 msg: 'Register Success!',
@@ -65,7 +67,7 @@ const authCtrl = {
             res.cookie('refreshtoken', refresh_token, {
                 httpOnly: true,
                 path: '/api/refresh_token',
-                maxAge: 30*24*60*60*1000 // 30days
+                maxAge: 30*24*60*60*1000 
             })
 
             res.json({
@@ -81,6 +83,7 @@ const authCtrl = {
         }
     },
     logout: async (req, res) => {
+
         try {
             res.clearCookie('refreshtoken', {path: '/api/refresh_token'})
             return res.json({msg: "Logged out!"})
@@ -88,16 +91,19 @@ const authCtrl = {
             return res.status(500).json({msg: err.message})
         }
     },
+
     generateAccessToken: async (req, res) => {
         try {
             const rf_token = req.cookies.refreshtoken
             if(!rf_token) return res.status(400).json({msg: "Please login now."})
+
 
             jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, async(err, result) => {
                 if(err) return res.status(400).json({msg: "Please login now."})
 
                 const user = await Users.findById(result.id).select("-password")
                 .populate('followers following', 'avatar username fullname followers following')
+
 
                 if(!user) return res.status(400).json({msg: "This does not exist."})
 
